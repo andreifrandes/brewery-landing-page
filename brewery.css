@@ -1,0 +1,305 @@
+/*
+color names
+bluee dark:  #414A4D
+blue light #5A666A
+ */
+*,*::before,*::after{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  transition: all .4s;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+body{
+  transition: all .4s;
+
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5 ;
+  color: #80807a;
+  /* his fz  */
+  /* font-size: 1.3125rem; */
+  /*  my fz */
+}
+/* typography */
+h1,h2,h3,p,figure{
+  margin: 0;
+  /* we can adjust later the margins for specific elements */
+}
+
+.section__title,
+.section__subtitle{
+  font-family: 'Poppins',sans-serif;
+  font-weight: 600;
+  line-height: 1;
+}
+.section__title{
+  color:  #414A4D;
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+.section__subtitle{
+  font-size: 1.69rem;
+  color: #5A666A;
+  font-style: italic;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: .5em;
+}
+
+
+
+/* styling intro */
+.section--intro{
+  background-image: url('images/hero-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* creating the grid */
+    padding: 10vh 0;
+  display: grid;
+
+  grid-template-columns: minmax(1em,1fr) minmax(400px,600px) minmax(1em,1fr);
+  overflow: hidden;
+}
+.logo{
+  width: 250px;
+  margin: 0 auto 2em;
+  display: block;
+  grid-column: 2/3;
+  margin-top: 2em;
+}
+.intro__text{
+  grid-column: 2/3;
+  text-align: center;
+}
+.intro__text::before{
+  content: "";
+  display: block;
+  background: #80807a;
+  width: 20%;
+  margin: 0 auto;
+  height: 1px;
+  margin-bottom: 1em;
+}
+
+
+/* styling the nav bar */
+.unstyled-ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.unstyled-ul a{
+  text-decoration: none;
+  color: rgba(255, 255, 255,.6);
+}
+nav{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.unstyled-ul{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 1.5em;
+}
+.unstyled-ul li:hover{
+  text-decoration: underline;
+}
+
+
+
+
+
+
+/* styling the beer section */
+.section{
+  display: grid;
+  grid-template-columns: minmax(1em,1fr) minmax(400px,600px) minmax(1em,1fr);
+  padding: 5em 0;
+}
+.section__title,
+.section__subtitle,
+p{
+  grid-column: 2/3;
+}
+.section--beer{
+  text-align: center;
+}
+.grid-carousel{
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 2em repeat(5,1fr) 2em;
+  max-width: 1200px;
+  margin: 2em auto;
+  position: relative;
+}
+.grid-carousel::before{
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  grid-column: 2/4;
+  background: linear-gradient(to right ,rgba(255, 255, 255,.8),rgba(255, 255, 255,.2));
+}
+.grid-carousel::after{
+  content: "";
+  display: block;
+  position: absolute;
+  background: rgba(163, 53, 96, 0.10);
+  grid-column: 5/7;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(to left ,rgba(255, 255, 255,.8),rgba(255, 255, 255,.2))
+}
+
+/* my way of doing it */
+figcaption{
+  display: none;
+}
+.middle-figcaption{
+  display: block;
+}
+button.grid-carousel__button{
+  font-size: 1.6rem;
+  background: #fff;
+  border: none;
+}
+grid-carousel__button:focus{
+  outline: none !important;
+}
+
+
+
+
+
+
+/* section mission */
+.section--card{
+  grid-template-columns: minmax(1em,1fr) repeat(6,1fr) minmax(1em,1fr);
+}
+.card--start{
+  grid-column: 2/span 4;
+  grid-row:1/2;
+
+}
+.card__image--end{
+  grid-column: 5/span 3;
+  grid-row:1/2;
+}
+
+
+/*  styling the first card */
+.card--dark{
+  background: rgb(48, 55, 71);
+  color: rgba(255, 255, 255,.8) ;
+  padding: 2.5em;
+  padding-right: 10rem;
+  font-size: 1rem;
+  outline-style: solid;
+  outline-color: #fff;
+  outline-offset: -1.5em;
+  padding-right: 25%;
+  margin-bottom: 4rem;
+}
+.card--dark h1{
+  font-size: 2.4em;
+  color: rgba(255, 255, 255,.9) ;
+}
+.btn--light{
+  text-decoration: none;
+  display: inline-block;
+  padding: .5rem 1.3rem;
+  background: grey;
+  font-weight: 600;
+  color: rgb(30, 40, 51);
+  border-radius: 10px;
+  margin-top: 1em;
+}
+.card__image--end{
+  margin-top: 3rem;
+}
+.card--last{
+  background: rgb(48, 55, 71);
+  color: rgba(255, 255, 255,.8);
+  padding: 2.5em;
+  font-size: 1rem;
+  outline-style: solid;
+  outline-color: #fff;
+  outline-offset: -1.5em;
+  margin-bottom: 4rem;
+  grid-column: 3/6;
+  grid-row: 1/4;
+}
+
+.image--front{
+  max-width: 100%;
+height: auto;
+grid-column: 5/8;
+grid-row: 2/5;
+z-index: -1;
+}
+
+
+.btn--outline{
+  text-decoration: none;
+  display: inline-block;
+  padding: .5rem 1.3rem;
+
+  font-weight: 600;
+  color: grey;
+  border-radius: 10px;
+  margin-top: 1em;
+  border: 2px solid grey;
+}
+.btn--dark{
+  color: rgb(48, 55, 71);
+  background: grey;
+  text-decoration: none;
+  display: inline-block;
+  padding: .5rem 1.3rem;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-top: 1em;
+  margin-left: .5em;
+}
+
+
+
+
+
+
+
+
+
+/* styling the brewery section */
+.brewery--img{
+  grid-column: 1/4;
+
+margin-right: 4em;
+
+padding-right: 4em;
+
+grid-row: 1/6;
+}
+.brewery--card{
+  grid-row: 2/5;
+  grid-column: 4/8;
+  padding: 2em;
+  border: 4px solid rgb(48, 55, 71);
+  border-radius: 10px;
+}
